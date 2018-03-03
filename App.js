@@ -9,30 +9,59 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button,
+  Image
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
+import SpriteSheet from './components/SpriteSheet'
+import MultipleSpriteSheet from './components/MultipleSpriteSheet'
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+    <View style={styles.container}>
+      <MultipleSpriteSheet
+      ref={ref => this.mummy = ref}
+      source={[
+        require('./images/Hotdog_0.png'),
+        require('./images/Hotdog_1.png'),
+        require('./images/Hotdog_2.png'),
+        require('./images/Hotdog_3.png'),
+        require('./images/Hotdog_4.png'),
+        require('./images/Hotdog_5.png'),
+        require('./images/Hotdog_6.png'),
+        require('./images/Hotdog_7.png'),
+        require('./images/Hotdog_8.png'),
+        require('./images/Hotdog_9.png'),
+        require('./images/Hotdog_10.png'),
+        require('./images/Hotdog_11.png'),
+        require('./images/Hotdog_12.png'),
+        require('./images/Hotdog_13.png'),
+        require('./images/Hotdog_14.png'),
+        require('./images/Hotdog_15.png'),
+        require('./images/Hotdog_16.png'),
+        require('./images/Hotdog_17.png'),
+        require('./images/Hotdog_18.png'),
+        require('./images/Hotdog_19.png'),
+        require('./images/Hotdog_20.png'),
+        require('./images/Hotdog_21.png'),
+        require('./images/Hotdog_22.png'),
+        require('./images/Hotdog_23.png'),
+        require('./images/Hotdog_24.png'),
+        require('./images/Hotdog_25.png'),
+        require('./images/Hotdog_26.png'),
+        require('./images/Hotdog_27.png'),
+        require('./images/Hotdog_28.png'),
+        require('./images/Hotdog_29.png'),
+        require('./images/Hotdog_30.png'),
+        require('./images/Hotdog_31.png'),
+      ]}
+      height={520}
+      width={374}/>
+      <Button title='Play' onPress={() => {
+        this.mummy.play({fps: 30, loop: true, resetAfterFinish: true});
+      }}/>
       </View>
     );
   }
